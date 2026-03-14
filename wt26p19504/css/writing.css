@@ -1,0 +1,550 @@
+* { box-sizing: border-box;
+
+ }
+ body {
+  font-family: "Poppins", "Inter", sans-serif;
+  background-color: #f5f6fa;
+   margin:0;
+}
+
+
+
+.zaglavlje{
+  position: sticky;
+  top: 0;
+  display:flex;
+  background-color: white;
+  z-index: 50; /*osigurava da zagavlje bude iznad svega*/
+  align-items: center;
+  justify-content: space-between;
+   gap: 16px;
+   padding:  10px 18px;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.lijevo-zaglavlje{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width: 0;
+
+}
+
+
+.strelica {
+ 
+  background: none;
+  border: none;
+  padding: 0;
+ margin: 4px 0px 0px 0px;
+  outline: none; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+ 
+  width: 30px; 
+  height: 30px; 
+  cursor: pointer; 
+}
+
+
+.strelica svg {
+  
+  color: #616161; 
+  
+ width: 18px; 
+  height: 18px; 
+  display: block; /* bez  razmaka ispod SVG-a */
+}
+
+.dugme-nazad {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+  
+.naslovprojekta{
+  font-weight:700;
+  font-size:1.3rem;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  margin-left:12px;
+
+   margin-bottom: 8px;
+}
+
+.srednje-zaglavlje{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+  flex:1;
+  padding:0 20px;
+  min-width:0;
+  flex-wrap:nowrap; /* mijenja se na malim ekranima */
+}
+
+.tag-btn{
+  color:#333;
+  font-size:0.7rem;
+  padding:8px 12px; /*za povecavanje dugmeta*/
+  border-radius:8px; /*zaobljene ivice dugmeta*/
+  border: none;
+  text-transform: uppercase;
+  background-color:#e6e7ea;
+  letter-spacing:0.6px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+  
+  cursor: pointer;
+}
+
+.tag-btn:hover {
+  background: #f0f0f0; 
+}
+
+.desno-zaglavlje { display:flex; align-items:center; gap:12px; }
+.zeleno-btn{
+  background-color:#28a745;
+  color:white;
+  border: none;
+  padding:10px 16px;
+  border-radius:8px;
+  
+  cursor:pointer;
+  transition: background-color 0.2s ease;
+}
+
+.zeleno-btn:hover{
+  background:#218838;
+}
+
+.layout{
+display:flex;
+align-items: stretch; /* stretch children so sidebar matches paper height */
+
+  
+}
+
+.sidebar {
+  width: 250px;
+  background-color:white;
+  padding: 16px;
+  border-right: 1px solid #ddd;
+  margin-top: 0;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  min-height: 100vh; /* ensure sidebar spans full viewport height and stretches with content */
+}
+
+/* Naslov */
+.sidebar-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Lista scena */
+.scene-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Svaka scena */
+.scene-item {
+  border-radius: 8px; /*zaobljene ivice*/
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+.scene-item:hover {
+  background-color: #f4f4f4;
+}
+
+/* Aktivna scena */
+.scene-item.active {
+  background-color: #E9EEFF;
+  border-left: 4px solid #5B3FFF;
+  padding-left: 8px; /* kompenzacija širine trake */
+}
+
+
+.scene-header {
+  font-size: 14px;
+  margin: 0;
+  display: block;
+  white-space: normal;            
+  overflow: visible;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.scene-item.active .scene-header {
+  font-weight: 600; /*za boldiranje*/
+}
+
+
+
+.scene-pages {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+}
+.editor{
+  flex:1;
+  min-width:0;
+  
+}
+
+.papir{
+  background: #fff;
+  border-radius:12px;
+  padding:30px;
+  box-shadow: 0 6px 30px rgba(20,20,30,0.06);
+  max-width:100%;
+  margin: 40px 80px 10px 80px;
+  min-height: 60vh; /* start reasonably tall, but grow with content */
+  padding-left: 60px;
+  padding-right: 60px;
+  outline: none;
+}
+.scena-naslov{
+  color:#D68A00;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin: 80px 0px 100px 0px;
+  font-size:1.1rem;
+  font-family: "Courier Prime", "Courier New", monospace;
+}
+
+.papir p{
+  margin:0 0 1.5em 0; 
+  line-height:1.45;
+  font-family: "Courier Prime", "Courier New", monospace;
+  font-size: 0.95rem;
+  text-indent: 70px;
+  
+}
+
+
+
+@media (max-width: 749px) {
+
+    
+    .zaglavlje {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 18px;
+    }
+
+    .lijevo-zaglavlje {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    
+    .srednje-zaglavlje {
+        width: 100%;
+        flex-wrap: wrap; /*prelamanje u vise redova*/
+        
+        justify-content: center;
+        padding: 0;
+        gap: 6px; 
+    }
+    
+   
+    .tag-btn {
+        
+        flex-basis: calc(50% - 6px); /*otprilike 2x2*/
+        max-width: 48%; 
+        flex-grow: 0;
+        font-size: 0.65rem; 
+        padding: 6px 10px;
+        text-align: center; 
+    }
+
+
+    
+    .desno-zaglavlje {
+        width: 100%;
+        
+        justify-content: center;
+        gap: 0;
+    }
+    
+    .zeleno-btn {
+        padding: 8px 14px;
+        font-size: 0.9rem; 
+    }
+
+    
+    .layout {
+        /* Sidebar iz kolone u gornji red iznad editora */
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        height: auto;
+        position: relative;
+         
+         
+    }
+
+    .papir {
+        margin: 20px 20px 20px 20px;
+        padding: 20px;
+        padding-left: 30px;
+        height: auto;
+        min-height: 80vh;
+    }
+
+    
+    .scena-naslov {
+         margin: 40px 0px 60px 0px;
+    }
+    .papir p {
+        text-indent: 50px;
+    }
+    
+    .naslovprojekta {
+        margin-left: 10px;
+    }
+
+}
+
+/*toolbar-sp2*/
+
+.toolbar {
+    width: 100%;
+    background-color: white;
+    padding: 12px 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 40;
+    box-shadow: none;
+}
+
+/* Dugmad u toolbaru */
+.toolbar button {
+    background: #D68A00;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: 0.15s ease;
+    color: white;
+}
+
+/* Formatiranje dugmadi (Bold, Italic, Underline) - originalna boja */
+#btnBold, #btnItalic, #btnUnderline {
+    background: #f1f2f4;
+    color: #333;
+}
+
+#btnBold:hover, #btnItalic:hover, #btnUnderline:hover {
+    background: #f0f0f0;
+}
+
+#btnBold:active, #btnItalic:active, #btnUnderline:active {
+    background: #e0e0e0;
+}
+
+.toolbar button:hover {
+    background: #c0760a;
+}
+
+.toolbar button:active {
+    background: #b36509;
+}
+
+
+
+
+/* Input polje za uloge */
+#inputUloga {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #e6e7ea;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+#inputUloga:focus {
+    outline: none;
+   background-color: white;
+}
+
+/* Div za poruke */
+#poruke {
+    width: 100%;
+    padding: 12px 24px;
+    background: #e6e7ea;
+    color: #333;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    font-size: 0.9rem;
+    display: none; /* skriven dok nema poruke */
+    border-radius: 8px;
+    margin: 0;
+}
+
+/* Poruka uspjeha */
+#poruke.success {
+    background: #e6ffe6;
+    color: #2b6e2b;
+}
+
+/* Poruka greške */
+#poruke.error {
+    background: #ffe6e6;
+    color: #7a1c1c;
+}
+
+/* ===== Panel: kartice + grid ===== */
+.panel {
+  background: #f5f6f8;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 1200px) {
+  .panel-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+@media (max-width: 700px) {
+  .panel-grid { grid-template-columns: 1fr; }
+}
+
+.box {
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.box-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.field label {
+  font-size: 12px;
+  color: #333;
+}
+
+.field input,
+.field textarea {
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  background: #fff;
+  outline: none;
+}
+
+.field textarea { resize: vertical; min-height: 70px; }
+
+/* Dugmad – obojena, ne prevelika */
+.btn {
+  height: 36px;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-blue {
+  background: #bfe6ff;
+  border-color: #9bd7ff;
+}
+
+.btn-orange {
+  background: #ffd39a;
+  border-color: #ffc57a;
+}
+
+.btn-purple {
+  background: #d8c9ff;
+  border-color: #c7b3ff;
+}
+
+.btn:hover { filter: brightness(0.97); }
+
+/* Poruke (status) */
+#poruke {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #d9eef2;
+  color: #1f3a40;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+#upozorenje{
+  display:none;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff3cd;      /* svijetlo žuta */
+  border: 1px solid #ffe69c;
+  color: #664d03;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 749px) {
+    .toolbar {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 16px;
+        top: 120px; 
+    }
+
+    .toolbar button {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    #poruke {
+        padding: 10px 16px;
+    }
+}

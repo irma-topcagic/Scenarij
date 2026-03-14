@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ScenarijPro</title>
+     <link rel="stylesheet" href="../css/user.css" />
+  </head>
+  <body>
+    <div class="forma-container">
+        <form class="forma">
+            <header class="form-header">
+               <h1 class="naslov">Postavke korisničkog računa</h1>
+               <div class="linija-naslov"></div>
+               <p class="opis-forme">Upravljajte vašim korisničkim računom, sigurnosnim postavkama i notifikacijama</p>
+            </header>
+        
+        <section class="podaci">
+            <h2 class="naslov-sekcije">Podaci o korisničkom računu</h2>
+            <div class="input-gr">
+                <label  for="imeipr">Ime i prezime</label>
+                <input type="text" id="imeipr" name="imeipr" placeholder="Irma Topcagic">
+            </div>
+            <div class="input-gr">
+                <label for="email">Email adresa</label>
+                <input type="email" id="email" name="email" placeholder="irmatop@primjer.com">
+            </div>
+            <div class="input-gr">
+                <label for="brojel">Broj elemenata po stranici</label>
+                <input type="number" id="brojel" name="brojel" min="1" max="100" value="25">
+            </div>
+        </section>
+        <section class="postavke">
+            <h2 class="naslov-sekcije">Sigurnosne postavke</h2>
+            <div class="input-gr">
+             <label for="novasifra">Nova šifra</label>
+             <input type="password" id="novasifra" name="novasifra" placeholder="*******">
+            </div>
+            <div class="checkbox-grupa">
+                    <input type="checkbox" id="omoguci-2fa" name="omoguci-2fa" value="true">
+                    <label for="omoguci-2fa">Omogući Two-Factor Authentication (2FA)</label>
+            </div>
+        </section>
+        <section class="notifikacije">
+            <h2 class="naslov-sekcije">Notifikacije</h2>
+            <div class="kontakt-metod">
+                <label>Preferirani način komunikacije</label>
+                <div class="radio-dugme">
+                    <div class="radio-opcija">
+                        <input type="radio" id="kontakt-email" name="kontakt" value="email" checked>
+                        <label for="kontakt-email">Email</label>
+                    </div>
+                    <div class="radio-opcija">
+                        <input type="radio" id="sms" name="kontakt" value="sms">
+                        <label for="sms">SMS</label>
+                    </div>
+                    <div class="radio-opcija">
+                        <input type="radio" id="nista" name="kontakt"value="none">
+                        <label for="nista">None</label>
+                    </div>
+                </div>
+            </div>
+            <div class="frekvencija">
+                    <label for="notifikacije-select">Notification frequency</label>
+                    <div class="dropdown-dio">
+                        <select id="notifikacije-selecet" name="notification-frekvencija">
+                            <option value="daily" selected>Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="never">Never</option>
+                        </select>
+                    </div>
+                </div>
+        </section>
+        <button  class="dugme">Spremi promjene</button>
+        </form>
+
+
+    </div>
+
+  </body>
+</html>

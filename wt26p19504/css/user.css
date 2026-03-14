@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: "Poppins", "Inter", sans-serif;
+  background-color: #f5f6fa;
+  min-height: 100vh;
+  display: flex; 
+  justify-content: center;  /* horizontalno centriranje */
+  align-items: center;  /* vertikalno */
+  padding: 20px; 
+}
+
+.forma-container {
+    width: 100%;
+    max-width: 840px;
+}
+
+
+.forma {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    
+}
+
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header .naslov {
+    font-size: 24px;
+    font-weight: bold; 
+    margin-bottom: 8px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.linija-naslov {
+    height: 3px;
+    background-color: #5B3FFF;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.opis-forme {
+    font-style: italic; /* Italic tekst */
+    color:#747474;
+}
+
+/* Sekcije*/
+.podaci, .postavke, .notifikacije {
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.naslov-sekcije {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: none;
+}
+
+
+.podaci {
+    background-color: #f7f9fc; 
+    border-color: #e0e0e0;
+}
+
+.podaci .naslov-sekcije {
+    color: #5B3FFF; 
+    
+}
+
+.postavke {
+    background-color: #fff0f0;
+    border-color: #f9d3d3;
+}
+.postavke .naslov-sekcije {
+    color: #d12f45;
+    
+}
+
+.notifikacije {
+    background-color: #f0fff7;
+    border-color: #d9fceb;
+}
+.notifikacije .naslov-sekcije {
+    color: #008855;
+    
+}
+
+/* Input grupe */
+.input-gr, .kontakt-metod, .frekvencija {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; 
+    gap: 8px;
+}
+
+.input-gr label, .kontakt-metod label, .frekvencija label {
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"]
+ {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Zaobljeni rub */
+    background-color: #fcfcfc;;
+    width: 100%;
+    
+}
+
+
+input:focus {
+    border-color: #5B3FFF;
+    outline: none;
+    
+}
+
+
+select:focus {
+    border-color: #00A36C;
+    outline: none;
+    
+}
+
+.postavke input:focus {
+    
+    border-color: #d12f45;
+    
+}
+/* Checkbox stil */
+.checkbox-grupa {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Radio dugme */
+.radio-dugme {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.radio-opcija {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-dio {
+    width: 100%;
+}
+
+select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fcfcfc;
+    width: 100%;
+    appearance: none; /* Uklanjanje defaultne strelice */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.5h-258a17.6%2017.6%200%200%200-13.2%206.5%2017.6%2017.6%200%200%200%200%2025.3l129%20129c6.5%206.4%2014.3%209.6%2022.3%209.6s15.8-3.2%2022.3-9.6l129-129a17.6%2017.6%200%200%200%200-25.3z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+
+.dugme {
+    width: 100%;
+    padding: 15px;
+    background-color: #5B3FFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+     margin-top: 20px;
+}
+
+
+@media (min-width: 750px) {
+    /* Labele pored polja na širim ekranima */
+    .input-gr, .kontakt-metod, .frekvencija {
+        flex-direction: row; 
+        align-items: flex-start; 
+    }
+
+    
+    .input-gr label {
+        flex-basis: 35%; /*  labele s lijeve strane */
+        text-align: right;
+        padding-right: 15px;
+        line-height: 2; /* poravnanje s input poljem */
+    }
+    
+    
+    .kontakt-metod label, .frekvencija label {
+        flex-basis: 35%; 
+        text-align: right;
+        padding-right: 15px;
+    }
+
+    
+    .input-gr input, .dropdown-dio, .radio-dugme {
+        flex-grow: 1;
+        max-width: 65%; 
+    }
+
+    
+   
+
+    /*lijevi dio prazan*/
+    .checkbox-grupa {
+        margin-left: 35%; 
+        margin-top: 5px;
+    }
+}
+
